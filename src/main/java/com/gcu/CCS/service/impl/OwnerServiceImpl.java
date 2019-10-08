@@ -5,12 +5,16 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.gcu.CCS.dao.OwnerDao;
 import com.gcu.CCS.pojos.Owner;
 import com.gcu.CCS.service.OwnerService;
 
+@Service("ownerService")
+@Transactional//使用注解配置事务
 public class OwnerServiceImpl implements OwnerService {
 
 	@Autowired

@@ -1,12 +1,16 @@
 package com.gcu.CCS.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.gcu.CCS.dao.TravelInfoDao;
 import com.gcu.CCS.pojos.TravelInfo;
 import com.gcu.CCS.service.TravelInfoService;
 
+@Service("travelInfoService")
+@Transactional//使用注解配置事务
 public class TravelInfoServiceImpl implements TravelInfoService {
 	
 	@Autowired

@@ -55,7 +55,7 @@
 
     <div class="container">
 
-      <form:form action="user/register" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="register.do" method="post" modelAttribute="user" class="form-signin">
         <h2 class="form-signin-heading">快速注册</h2>
         <label for="inputTel" class="sr-only">Telephone number</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>

@@ -16,6 +16,6 @@ public class BookInfoController {
 	
 	@RequestMapping("/selectBookInfo")
 	public String selectBookInfo(Model model,String act) {
-		return bookInfoService.selectAllBookInfo(model, act);
+		return bookInfoService.selectBookInfo(model, act);
 	}
 }

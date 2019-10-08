@@ -63,7 +63,7 @@
 
     <div class="container">
 
-      <form:form action="user/login" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="login.do" method="post" modelAttribute="user" class="form-signin">
         <h2 class="form-signin-heading">请登录</h2>
         <label for="inputTel" class="sr-only">Email address</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
@@ -75,7 +75,7 @@
             <input type="checkbox" value="remember-me"> 记住我
           </label>
         </div>
-        <a class="register" href="toLogin">免费注册</a>
+        <a class="register" href="toLogin.do">免费注册</a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form:form>
