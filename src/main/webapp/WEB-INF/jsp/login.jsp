@@ -10,14 +10,14 @@
 
 <script type="text/javascript">
     function register() {
-    	document.getElementById("loginForm").action='register.do';
+    	document.getElementById("loginForm").action='user/register';
     	document.getElementById("loginForm").submit();
     }
 </script>
 </head>
 <body>
 	<h2>first Spring MVC demo</h2>
-	<form:form action="login.do" method="post" modelAttribute="user" id="loginForm">
+	<form:form action="user/login" method="post" modelAttribute="user" id="loginForm">
 		用户名:<input type="text" name="username">
 		<p>
 		密码：<input type="password" name="password">
@@ -63,7 +63,7 @@
 
     <div class="container">
 
-      <form:form action="login.do" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="user/login" method="post" modelAttribute="user" class="form-signin">
         <h2 class="form-signin-heading">请登录</h2>
         <label for="inputTel" class="sr-only">Email address</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
@@ -75,7 +75,7 @@
             <input type="checkbox" value="remember-me"> 记住我
           </label>
         </div>
-        <a class="register" href="toLogin.do">免费注册</a>
+        <a class="register" href="toLogin">免费注册</a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form:form>

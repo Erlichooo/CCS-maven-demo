@@ -7,8 +7,6 @@ import org.apache.ibatis.annotations.Select;
 
 import com.gcu.CCS.pojos.User;
 
-import junit.framework.Test;
-
 public interface UserDao {
 	@Insert("insert into users(username,password)"
 			+ "values(#{username},#{password})")

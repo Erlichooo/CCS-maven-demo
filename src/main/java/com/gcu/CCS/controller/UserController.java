@@ -12,6 +12,7 @@ import com.gcu.CCS.pojos.User;
 import com.gcu.CCS.service.UserService;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 	@Autowired
 	private UserService userService;
