@@ -1,0 +1,72 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.layout{
+	margin-top: 9px;
+	display: block;
+	float: left;
+}
+
+.login-state{
+	color: #FFFFFF;
+	line-height: 50px;
+	margin-left: 40px;
+	display: block;
+	float: left;
+}
+
+.user{
+	color: #FFFFFF;
+	line-height: 50px;
+	margin-left: 10px;
+	display: block;
+	float: left;
+}
+
+.routeInfo{
+	margin-top: 100px;
+}
+
+.routeInfo_below{
+	padding: 4px;
+	height: 250px;
+}
+
+.departure{
+	display: block;
+	float: left;
+}
+
+.direction_img img{
+	width: 750px;
+	height:60px;
+	margin-top: 60px;
+	display: block;
+	float: left;
+}
+
+.destination{
+	display: block;
+	float: left;
+}
+
+.bookingButton{
+	margin-top: 10px;
+	display: block;
+	float: left;
+}
+
+.seatLeft{
+	margin-left: 800px;
+	margin-top: 20px;
+	font-size: 18px;
+	display: block;
+	float: left;
+}
+
+.seatLeft h5{
+	display: block;
+	float: left;
+}

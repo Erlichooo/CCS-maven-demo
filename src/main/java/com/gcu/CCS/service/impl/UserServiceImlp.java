@@ -27,7 +27,7 @@ public class UserServiceImlp implements UserService {
 		}
 		if(tuser != null) {//判断tuser，若不为空，则将用户信息存到session中
 			session.setAttribute("user", tuser);
-			return "succ";
+			return "main";
 		}else {//否则将登陆失败信息存到model中
 			model.addAttribute("msg", "您还没有登录");
 			return "e";
@@ -50,6 +50,11 @@ public class UserServiceImlp implements UserService {
 
 	@Override
 	public String toLogin() {
+		return "login";
+	}
+
+	@Override
+	public String toRegister() {
 		return "register";
 	}
 

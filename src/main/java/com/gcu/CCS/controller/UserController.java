@@ -12,6 +12,7 @@ import com.gcu.CCS.pojos.User;
 import com.gcu.CCS.service.UserService;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 	@Autowired
 	private UserService userService;
@@ -22,6 +23,10 @@ public class UserController {
 	@RequestMapping("/register")
 	public String register(@ModelAttribute User user, Model model, HttpSession session) {
 		return userService.addUser(user, model,session);
+	}
+	@RequestMapping("/toRegister")
+	public String toRegister() {
+		return userService.toRegister();
 	}
 	@RequestMapping("/toLogin")
 	public String toLogin() {

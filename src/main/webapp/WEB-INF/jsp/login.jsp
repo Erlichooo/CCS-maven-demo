@@ -1,33 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
 <!DOCTYPE html>
-<%-- <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<script type="text/javascript">
-    function register() {
-    	document.getElementById("loginForm").action='user/register';
-    	document.getElementById("loginForm").submit();
-    }
-</script>
-</head>
-<body>
-	<h2>first Spring MVC demo</h2>
-	<form:form action="user/login" method="post" modelAttribute="user" id="loginForm">
-		用户名:<input type="text" name="username">
-		<p>
-		密码：<input type="password" name="password">
-		<p>
-		<input type="submit" value="登陆"> <input type="button" onclick="register()" value="注册" >
-	</form:form>
-</body>
-</html> --%>
 <html lang="en">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +45,7 @@
 
     <div class="container">
 
-      <form:form action="login.do" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="user/login" method="post" modelAttribute="user" class="form-signin">
         <h2 class="form-signin-heading">请登录</h2>
         <label for="inputTel" class="sr-only">Email address</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
@@ -75,7 +57,7 @@
             <input type="checkbox" value="remember-me"> 记住我
           </label>
         </div>
-        <a class="register" href="toLogin.do">免费注册</a>
+        <a class="register" href="user/toRegister">免费注册</a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form:form>

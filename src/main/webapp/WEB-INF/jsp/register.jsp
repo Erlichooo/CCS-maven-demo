@@ -2,25 +2,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
-<!-- <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-   function massage() {
-   		alert("${msg}");
-   		window.location.replace("login.jsp")
-   }
-    
-</script>
-</head>
-<body onload="massage()">
-	
-</body>
-</html> -->
 <html lang="en">
   <head>
+  	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +45,7 @@
 
     <div class="container">
 
-      <form:form action="register.do" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="user/register" method="post" modelAttribute="user" class="form-signin">
         <h2 class="form-signin-heading">快速注册</h2>
         <label for="inputTel" class="sr-only">Telephone number</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>

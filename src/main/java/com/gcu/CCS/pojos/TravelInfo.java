@@ -1,19 +1,19 @@
 package com.gcu.CCS.pojos;
 
-import java.security.Timestamp;
+import java.util.Date;
 
 public class TravelInfo {
 	private int id;
 	private String ownerName;
 	private String ownerTel;
-	private Timestamp date;
+	private Date date;
 	private String address;
 	private double price;
 	private int owner_id;
 	public TravelInfo() {
 		super();
 	}
-	public TravelInfo(int id, String ownerName, String ownerTel, Timestamp date, String address, double price, int owner_id) {
+	public TravelInfo(int id, String ownerName, String ownerTel, Date date, String address, double price, int owner_id) {
 		super();
 		this.id = id;
 		this.ownerName = ownerName;
@@ -41,10 +41,10 @@ public class TravelInfo {
 	public void setOwnerTel(String ownerTel) {
 		this.ownerTel = ownerTel;
 	}
-	public Timestamp getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(Timestamp date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public String getAdress() {

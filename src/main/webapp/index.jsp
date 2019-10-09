@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="/WEB-INF/jsp/login.jsp"></jsp:forward>
+	<jsp:forward page="/WEB-INF/jsp/main.jsp"></jsp:forward>
 	<%-- <%response.sendRedirect("WEB-INF/jsp/login.jsp"); %> --%><!-- 重定向不能访问web-inf下资源 -->
 </body>
 </html>
