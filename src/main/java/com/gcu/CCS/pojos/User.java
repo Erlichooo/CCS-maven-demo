@@ -1,25 +1,27 @@
 package com.gcu.CCS.pojos;
 
 public class User {
-	private int id;
+	private Integer id;
 	private String username;
 	private String password;
+	private String name;
 	private String tel;
 	
 	public User() {//空构造方法必须有，否则sevice实现时会报错
 		super();
 	}
-	public User(int id, String username, String password, String tel) {
+	public User(Integer id, String username, String password, String name, String tel) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.name = name;
 		this.tel = tel;
 	}
-	public int getNum() {
+	public Integer getId() {
 		return id;
 	}
-	public void setNum(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUsername() {
@@ -40,9 +42,15 @@ public class User {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", tel=" + tel + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", tel="
+				+ tel + "]";
 	}
-	
 }

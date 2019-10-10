@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%
 String path = request.getContextPath();
@@ -19,6 +20,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<title>订票首页</title>
 		<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
 		html,body{
              width: 100%;
              height: 100%;
@@ -68,10 +73,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li>
 							<a href="travelInfo/selectTravelInfo" target="inCenter">车辆信息</a>
 						</li>
+						<li id="myBookInfo">
+							<c:if test="${sessionScope.user==null }">
+								<a href="user/toLogin">我的订单</a>
+							</c:if>
+							<c:if test="${sessionScope.user!=null }">
+							<a href="bookInfo/selectBookInfo?id=${sessionScope.user.id }" target="inCenter">我的订单</a>
+							</c:if>
+						</li>
 					</ul>
 				</div>
 				<div class="login-state" >
-					<p>欢迎：<a href="user/toLogin" id="ls">${user.username }</a></p>
+					<p>欢迎：<a href="user/toLogin" id="ls">${sessionScope.user.username }</a></p>
 				</div>
 				<div class="user">
 					<%-- 欢迎：${sessionScope.user.username } --%>

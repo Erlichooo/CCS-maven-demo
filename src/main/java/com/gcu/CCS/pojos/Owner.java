@@ -1,24 +1,24 @@
 package com.gcu.CCS.pojos;
 
 public class Owner {
-	private int id;
+	private Integer id;
 	private String username;
 	private String password;
 	private String tel;
 	public Owner() {
 		super();
 	}
-	public Owner(int id, String username, String password, String tel) {
+	public Owner(Integer id, String username, String password, String tel) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.tel = tel;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUsername() {

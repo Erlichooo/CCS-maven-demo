@@ -52,12 +52,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
         <div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> 记住我
-          </label>
-        </div>
-        <a class="register" href="user/toRegister">免费注册</a>
+	        <div class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"> 记住我
+	          </label>
+	        </div>
+	        <a class="register" href="user/toRegister">免费注册</a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form:form>

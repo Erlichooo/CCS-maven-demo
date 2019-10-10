@@ -21,7 +21,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="author" content="">
 
 		<title>订票首页</title>
-
+		<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body{
+             width: 100%;
+             height: 100%;
+        }
+        </style>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
@@ -35,47 +44,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <![endif]-->
 	</head>
 	<body>
-	<c:if test="${travelInfos.size() == 0 }">
-		目前还没有可选择的车辆。
-	</c:if>
-	<c:if test="${travelInfos.size() != 0 }">
-		<table border="1" bordercolor="PaleGreen">
-			<c:forEach items="${travelInfos }" var="travelInfo">
-				<div class="container routeInfo">
+	<div class="container">
 			      <!-- Main component for a primary marketing message or call to action -->
-			      <div class="routeInfo_below jumbotron">
-			      	<div>
-			        	<div class="departure">
-			        		<h1>${travelInfo.startProvince}</h1>
-							<h4>起点：${travelInfo.start}</h4>
-							<h5><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${travelInfo.date}" /></h5>
-			        	</div>
-			        	<div class="direction_img">
-			        		<img src="img/direction.png" />
-			        	</div>
-			        	<div class="destination">
-			        		<h1>${travelInfo.endProvince}</h1>
-							<h4>终点：${travelInfo.end}</h4>
-							<h5>发布人：${travelInfo.ownerName}</h5>
-							<h5>tel：${travelInfo.ownerTel}</h5>
-			        	</div>
-			        </div>
-			        
-			        <div class="bookingButton">
-			        <p>
-			          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">订票 &raquo;</a>
-			        </p>
-			        </div>
-			        
-			        <div class="seatLeft">
-			        		<h5>价格：</h5>
-			        		<h5>${travelInfo.price }</h5>
-			        </div>
-			      </div>
-			    </div>
-			</c:forEach>
-		</table>
-	</c:if>
+		<div class="jumbotron">
+		<center>
+			<c:if test="${bookInfos.size() == 0 }">
+				您目前还没有订单。
+			</c:if> 
+			<c:if test="${bookInfos.size() != 0 }">
+				<table border="1" bordercolor="PaleGreen">
+					<tr>
+						<th width="50px">ID</th>
+						<th width="100px">姓名</th>
+						<th width="200px">联系方式</th>
+						<th width="50px">线路</th>
+					</tr>
+					<c:forEach items="${bookInfos }" var="bookInfo">
+						<tr onmousemove="changeColor(this)" onmouseout="changeColor1(this)">
+							<td>${bookInfo.id }</td>
+							<td>${bookInfo.name }</td>
+							<td>${bookInfo.tel }</td>
+							<td><a href="travelInfo/selectATravelInfo?id=${bookInfo.travelInfoId }" target="_blank">详情</a></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</c:if>
+		</center>
+		</div>
+	</div>
 
 	</body>
 </html>

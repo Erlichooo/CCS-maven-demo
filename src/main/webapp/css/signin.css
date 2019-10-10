@@ -18,13 +18,18 @@ body {
   display: block;
   float: left;
 }
-
-.register{
+.owner{
+	
+}
+.form-signin.register{
+	margin-bottom: 10px;
 	display: block;
+  	float: right;
+	/* display: block;
 	margin-left: 100px;
 	position: relative;
 	top: 12px;
-	left: 140px;
+	left: 140px; */
 }
 
 .form-signin .form-control {

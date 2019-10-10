@@ -19,6 +19,11 @@ public class TravelInfoServiceImpl implements TravelInfoService {
 	public String selectTravelInfo(Model model,String act) {
 		model.addAttribute("travelInfos",travelInfoDao.selectAllTravelInfo());
 		return "travelInfo/selectTravelInfo";
+	}	
+	@Override
+	public String selectATravelInfo(Model model, Integer id) {
+		model.addAttribute("travelInfo",travelInfoDao.selectATravelInfo(id));
+		return "travelInfo/selectATravelInfo";
 	}
 	@Override
 	public String addTravelInfo(TravelInfo travelInfo) {

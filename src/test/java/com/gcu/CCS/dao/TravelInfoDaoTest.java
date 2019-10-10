@@ -18,8 +18,14 @@ public class TravelInfoDaoTest extends BaseTest{
 		if (travelInfos==null) {
 			System.out.println("nothing");
 		}else {
-			System.out.println(travelInfos.get(0));
+			System.out.println(travelInfos.get(0).toString());
 		}
+	}
+	
+	@Test
+	public void selectATravelInfo() {
+		TravelInfo travelInfo=travelInfoDao.selectATravelInfo(3);
+		System.out.println(travelInfo.toString());
 	}
 	
 	@Test
@@ -33,5 +39,6 @@ public class TravelInfoDaoTest extends BaseTest{
 		TravelInfoDaoTest test=new TravelInfoDaoTest();
 		/*test.addTravelInfo();*/
 		test.selectTravelInfo();
+		test.selectATravelInfo();
 	}
 }

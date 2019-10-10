@@ -3,21 +3,21 @@ package com.gcu.CCS.pojos;
 import java.util.Date;
 
 public class TravelInfo {
-	private int id;
-	private String ownerName;
-	private String ownerTel;
+	private Integer id;
+	private String ownerName;//来自owners表，通过ownerId匹配
+	private String ownerTel;//来自owners表，通过ownerId匹配
 	private Date date;
 	private String start;
 	private String end;
 	private String startProvince;
 	private String endProvince;
 	private double price;
-	private int ownerId;
+	private Integer ownerId;
 	public TravelInfo() {
 		super();
 	}
-	public TravelInfo(int id, String ownerName, String ownerTel, Date date, String start, String end,
-			String startProvince, String endProvince, double price, int ownerId) {
+	public TravelInfo(Integer id, String ownerName, String ownerTel, Date date, String start, String end,
+			String startProvince, String endProvince, double price, Integer ownerId) {
 		super();
 		this.id = id;
 		this.ownerName = ownerName;
@@ -30,10 +30,10 @@ public class TravelInfo {
 		this.price = price;
 		this.ownerId = ownerId;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getOwnerName() {
@@ -60,10 +60,10 @@ public class TravelInfo {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getOwnerId() {
+	public Integer getOwnerId() {
 		return ownerId;
 	}
-	public void setOwnerId(int ownerId) {
+	public void setOwnerId(Integer ownerId) {
 		this.ownerId = ownerId;
 	}
 	public String getStart() {

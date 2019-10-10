@@ -35,16 +35,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <![endif]-->
 	</head>
 	<body>
-	<c:if test="${travelInfos.size() == 0 }">
-		目前还没有可选择的车辆。
-	</c:if>
-	<c:if test="${travelInfos.size() != 0 }">
-		<table border="1" bordercolor="PaleGreen">
-			<c:forEach items="${travelInfos }" var="travelInfo">
 				<div class="container routeInfo">
 			      <!-- Main component for a primary marketing message or call to action -->
 			      <div class="routeInfo_below jumbotron">
-			      	<div>
+			      	<div class="routeInfo_detail">
 			        	<div class="departure">
 			        		<h1>${travelInfo.startProvince}</h1>
 							<h4>起点：${travelInfo.start}</h4>
@@ -61,21 +55,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			        	</div>
 			        </div>
 			        
-			        <div class="bookingButton">
-			        <p>
-			          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">订票 &raquo;</a>
-			        </p>
-			        </div>
-			        
 			        <div class="seatLeft">
 			        		<h5>价格：</h5>
 			        		<h5>${travelInfo.price }</h5>
 			        </div>
 			      </div>
 			    </div>
-			</c:forEach>
-		</table>
-	</c:if>
-
 	</body>
 </html>

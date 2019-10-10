@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.gcu.CCS.pojos.User;
 
@@ -13,12 +14,10 @@ public interface UserDao {
 	public int register(User user);
 	
 	@Select("select * from users where username = #{username}")
-	public List<User> matchUser(User user);
+	public List<User> matchUser(@ModelAttribute User user);
 	
 	@Select("select * from users where username =  #{username} and password = #{password}")//#{name对应的值}
-	public List<User> login(User user);
+	public List<User> login(@ModelAttribute User user);
 	
-	@Select("select * from users")
-	public List<User> Test();
 	/*public int update(User user);*/
 }

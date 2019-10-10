@@ -16,4 +16,8 @@ public class TravelInfoController {
 	public String selectTravelInfo(Model model,String act) {
 		return travelInfoService.selectTravelInfo(model, act);
 	}
+	@RequestMapping("/selectATravelInfo")
+	public String selectATravelInfo(Model model,Integer id) {
+		return travelInfoService.selectATravelInfo(model, id);
+	}
 }
