@@ -24,14 +24,14 @@ public class TravelInfoDaoTest extends BaseTest{
 	
 	@Test
 	public void addTravelInfo() {
-		TravelInfo travelInfo=new TravelInfo(0, null, null, null, "大剧院", 30.5, 1);
+		TravelInfo travelInfo=new TravelInfo(0, null, null, null, "大剧院", "华广", "深圳", "广州", 30.5, 1);
 		int addRows=travelInfoDao.addTravelInfo(travelInfo);
 		System.out.println(addRows);
 	}
 	
 	public static void main(String[] args) {
 		TravelInfoDaoTest test=new TravelInfoDaoTest();
-		test.addTravelInfo();
+		/*test.addTravelInfo();*/
 		test.selectTravelInfo();
 	}
 }

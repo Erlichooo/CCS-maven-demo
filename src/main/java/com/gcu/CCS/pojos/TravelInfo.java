@@ -7,21 +7,28 @@ public class TravelInfo {
 	private String ownerName;
 	private String ownerTel;
 	private Date date;
-	private String address;
+	private String start;
+	private String end;
+	private String startProvince;
+	private String endProvince;
 	private double price;
-	private int owner_id;
+	private int ownerId;
 	public TravelInfo() {
 		super();
 	}
-	public TravelInfo(int id, String ownerName, String ownerTel, Date date, String address, double price, int owner_id) {
+	public TravelInfo(int id, String ownerName, String ownerTel, Date date, String start, String end,
+			String startProvince, String endProvince, double price, int ownerId) {
 		super();
 		this.id = id;
 		this.ownerName = ownerName;
 		this.ownerTel = ownerTel;
 		this.date = date;
-		this.address = address;
+		this.start = start;
+		this.end = end;
+		this.startProvince = startProvince;
+		this.endProvince = endProvince;
 		this.price = price;
-		this.owner_id = owner_id;
+		this.ownerId = ownerId;
 	}
 	public int getId() {
 		return id;
@@ -47,27 +54,46 @@ public class TravelInfo {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getAdress() {
-		return address;
-	}
-	public void setAdress(String address) {
-		this.address = address;
-	}
 	public double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getOwner_id() {
-		return owner_id;
+	public int getOwnerId() {
+		return ownerId;
 	}
-	public void setOwner_id(int owner_id) {
-		this.owner_id = owner_id;
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
+	}
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
+	}
+	public String getStartProvince() {
+		return startProvince;
+	}
+	public void setStartProvince(String startProvince) {
+		this.startProvince = startProvince;
+	}
+	public String getEndProvince() {
+		return endProvince;
+	}
+	public void setEndProvince(String endProvince) {
+		this.endProvince = endProvince;
 	}
 	@Override
 	public String toString() {
-		return "travelInfo [id=" + id + ", ownerName=" + ownerName + ", ownerTel=" + ownerTel + ", date=" + date
-				+ ", address=" + address + ", price=" + price + ", owner_id=" + owner_id + "]";
+		return "TravelInfo [id=" + id + ", ownerName=" + ownerName + ", ownerTel=" + ownerTel + ", date=" + date
+				+ ", start=" + start + ", end=" + end + ", startProvince=" + startProvince + ", endProvince="
+				+ endProvince + ", price=" + price + ", ownerId=" + ownerId + "]";
 	}
 }

@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</ul>
 				</div>
 				<div class="login-state" >
-					<p>欢迎：<a href="user/toLogin" id="ls">${sessionScope.user.username }</a></p>
+					<p>欢迎：<a href="user/toLogin" id="ls">${user.username }</a></p>
 				</div>
 				<div class="user">
 					<%-- 欢迎：${sessionScope.user.username } --%>

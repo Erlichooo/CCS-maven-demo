@@ -46,17 +46,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			      <div class="routeInfo_below jumbotron">
 			      	<div class="routeInfo_detail">
 			        	<div class="departure">
-			        		<h1>广州</h1>
-							<h4>出发地：华广</h4>
+			        		<h1>${travelInfo.startProvince}</h1>
+							<h4>起点：${travelInfo.start}</h4>
 							<h5><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${travelInfo.date}" /></h5>
 			        	</div>
 			        	<div class="direction_img">
 			        		<img src="img/direction.png" />
 			        	</div>
 			        	<div class="destination">
-			        		<h1>东莞</h1>
-							<h4>目的地：</h4>
-							<h5>发布人：</h5>
+			        		<h1>${travelInfo.endProvince}</h1>
+							<h4>终点：${travelInfo.end}</h4>
+							<h5>发布人：${travelInfo.ownerName}</h5>
+							<h5>tel：${travelInfo.ownerTel}</h5>
 			        	</div>
 			        </div>
 			        
