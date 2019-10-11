@@ -58,6 +58,11 @@ public class UserServiceImlp implements UserService {
 		return "register";
 	}
 
+	@Override
+	public String toMain() {
+		return "main";
+	}
+
 /*model.addattribute()的作用
 1.往前台传数据，可以传对象，可以传List，通过el表达式 ${}可以获取到，
 类似于request.setAttribute("sts",sts)效果一样。

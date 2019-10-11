@@ -24,42 +24,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/main.css" rel="stylesheet">
+		<link href="css/booking.css" rel="stylesheet">
 		
-		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-		<script src="js/bootstrap/bootstrap.min.js"></script>
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	</head>
 	<body>
-				<div class="container routeInfo">
-			      <!-- Main component for a primary marketing message or call to action -->
-			      <div class="routeInfo_below jumbotron">
-			      	<div class="routeInfo_detail">
-			        	<div class="departure">
-			        		<h1>${travelInfo.startProvince}</h1>
-							<h4>起点：${travelInfo.start}</h4>
-							<h5><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${travelInfo.date}" /></h5>
-			        	</div>
-			        	<div class="direction_img">
-			        		<img src="img/direction.png" />
-			        	</div>
-			        	<div class="destination">
-			        		<h1>${travelInfo.endProvince}</h1>
-							<h4>终点：${travelInfo.end}</h4>
-							<h5>发布人：${travelInfo.ownerName}</h5>
-							<h5>tel：${travelInfo.ownerTel}</h5>
-			        	</div>
-			        </div>
-			        
-			        <div class="seatLeft">
-			        		<h5>价格：</h5>
-			        		<h5>${travelInfo.price }</h5>
-			        </div>
-			      </div>
-			    </div>
+		<div class="container">
+			<!-- Main component for a primary marketing message or call to action -->
+			<div class="routeInfo_below jumbotron">
+				<div class="routeInfo_detail">
+					<div class="departure">
+						<h1>${travelInfo.startProvince}</h1>
+						<h4>起点：${travelInfo.start}</h4>
+						<h5>发布人：${travelInfo.ownerName}</h5>
+						<h5>tel：${travelInfo.ownerTel}</h5>
+					</div>
+					<div class="direction_img">
+						<img src="imges/direction.png" />
+					</div>
+<%-- 					<div class="CountNum">
+						目前订票人数为：<h5>15</h5>
+					</div>
+					<div class="price">
+						售价：<h5>${travelInfo.price}</h5>
+					</div> --%>
+					<div class="destination">
+						<h1>${travelInfo.endProvince}</h1>
+						<h4>终点：${travelInfo.end}</h4>
+						<h5>时间:<fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${travelInfo.date}" /></h5>
+						<p><h5>售价：${travelInfo.price}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

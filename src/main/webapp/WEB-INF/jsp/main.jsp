@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="author" content="">
 
 		<title>订票首页</title>
+		
 		<style type="text/css">
 		* {
 			margin: 0px;
@@ -40,22 +41,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width: 100%;
 		}
 		</style>
-
+		
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 		
-		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/bootstrap/bootstrap.min.js"></script>
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 	</head>
 
 	<body>
-	
+		
 		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
 			<div class="container">
 				<div class="dropdown layout">
@@ -65,20 +61,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  </button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 						<li>
-							<a href="#">首页</a>
+							<a href="user/toMain">首页</a>
 						</li>
 						<li>
-							<a href="#">个人中心</a>
+							<a href="#" style="text-decoration: line-through;">个人中心</a>
 						</li>
 						<li>
 							<a href="travelInfo/selectTravelInfo" target="inCenter">车辆信息</a>
 						</li>
-						<li id="myBookInfo">
+						<li>
 							<c:if test="${sessionScope.user==null }">
-								<a href="user/toLogin">我的订单</a>
+								<a href="user/toLogin" target="_top">我的订单</a>
 							</c:if>
 							<c:if test="${sessionScope.user!=null }">
 							<a href="bookInfo/selectBookInfo?id=${sessionScope.user.id }" target="inCenter">我的订单</a>
+							<!-- 建议改成selectBookInfoById -->
 							</c:if>
 						</li>
 					</ul>
@@ -91,7 +88,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 		</nav>
-		<div id="content">
+		
+		<div id="content" class="theme">
 			<iframe  src=""  name="inCenter" frameborder="0"></iframe>
 		</div>
 		<script>

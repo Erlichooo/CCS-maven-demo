@@ -40,10 +40,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <div class="container">
 
-      <form:form action="user/login" method="post" modelAttribute="user" class="form-signin">
+      <form:form action="owner/login" method="post" modelAttribute="owner" class="form-signin">
         <h2 class="form-signin-heading">
-        用户版
-        	<a class="linker" href="owner/toLogin">商家入口</a>
+        商家版
+        	<a class="linker" href="user/toLogin">用户入口</a>
         </h2>
         <label for="inputTel" class="sr-only">Email address</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <label>
             <input type="checkbox" value="remember-me"> 记住我
           </label>
-		  <a class="linker" href="user/toRegister">免费注册</a>
+		  <a class="linker" href="owner/toRegister">免费注册</a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form:form>

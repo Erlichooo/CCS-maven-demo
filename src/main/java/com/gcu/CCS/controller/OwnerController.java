@@ -16,8 +16,24 @@ import com.gcu.CCS.service.OwnerService;
 public class OwnerController {
 	@Autowired
 	private OwnerService ownerService;
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public String login(@ModelAttribute Owner owner,Model model,HttpSession session) {
 		return ownerService.login(owner, model, session);
+	}
+	@RequestMapping("/register")
+	public String register(@ModelAttribute Owner owner,Model model,HttpSession session) {
+		return ownerService.addOwner(owner, model,session);
+	}
+	@RequestMapping("/toRegister")
+	public String toRegister() {
+		return ownerService.toRegister();
+	}
+	@RequestMapping("/toLogin")
+	public String toLogin() {
+		return ownerService.toLogin();
+	}
+	@RequestMapping("/toMain")
+	public String toMain() {
+		return ownerService.toMain();
 	}
 }

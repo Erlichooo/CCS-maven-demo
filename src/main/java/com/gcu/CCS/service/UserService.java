@@ -10,4 +10,5 @@ public interface UserService {
 	public String addUser(User user, Model model, HttpSession session);
 	public String toLogin();
 	public String toRegister();
+	public String toMain();
 }

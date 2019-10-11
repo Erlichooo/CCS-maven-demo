@@ -4,15 +4,17 @@ public class Owner {
 	private Integer id;
 	private String username;
 	private String password;
+	private String name;
 	private String tel;
 	public Owner() {
 		super();
 	}
-	public Owner(Integer id, String username, String password, String tel) {
+	public Owner(Integer id, String username, String password, String name, String tel) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.name = name;
 		this.tel = tel;
 	}
 	public Integer getId() {
@@ -39,8 +41,15 @@ public class Owner {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
-		return "owner [id=" + id + ", username=" + username + ", password=" + password + ", tel=" + tel + "]";
+		return "Owner [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", tel="
+				+ tel + "]";
 	}
 }

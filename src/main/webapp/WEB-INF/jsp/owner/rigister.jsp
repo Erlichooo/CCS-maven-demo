@@ -1,3 +1,4 @@
+<%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -20,19 +21,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
 		function massage() {
 			var msg='<%= session.getAttribute("msg")%>'
-			if(msg != "" && msg!="null")	alert(msg);
+			if(msg != ""&& msg!="null")	alert(msg);
 			<% session.setAttribute("msg","");%>
 		}
 	</script>
 
-    <title>校园订票系统</title>
+    <title>快速注册</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/register.css" rel="stylesheet">
 
+	<script type="text/javascript" src="js/jquery.min.js"></script>
   </head>
 
   <body onload="massage()">
@@ -40,29 +41,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <div class="container">
 
-      <form:form action="user/login" method="post" modelAttribute="user" class="form-signin">
-        <h2 class="form-signin-heading">
-        用户版
-        	<a class="linker" href="owner/toLogin">商家入口</a>
-        </h2>
-        <label for="inputTel" class="sr-only">Email address</label>
+      <form:form action="owner/register" method="post" modelAttribute="owner" class="form-signin">
+        <h2 class="form-signin-heading">商家注册</h2>
+        <label for="inputTel" class="sr-only">Telephone number</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
+        <label for="inputPassword" class="sr-only">Password</label>	
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-        <div class="form-signin-footer">
-          <label>
-            <input type="checkbox" value="remember-me"> 记住我
-          </label>
-		  <a class="linker" href="user/toRegister">免费注册</a>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        <label for="checkPassword" class="sr-only">check</label>
+        <input type="password" id="checkPassword" class="form-control" placeholder="再次输入密码" required>
+        <span id="warning"></span>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="sub">注册</button>
       </form:form>
 
-    </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    </div><!-- /container -->
+		
+	<script type="text/javascript">
+		$(function(){   
+		    $("#sub").click(function(){		   
+		    var pwd = $("input[id='inputPassword']").val();		
+		    var cpwd = $("input[id='checkPassword']").val();
+		    if(pwd != cpwd){
+			    alert("两次密码不一致!");
+			    $("input[id='inputPassword']").val("");
+			    $("input[id='checkPassword']").val("");
+			    return false;
+		    }
+		    });
+    	});
+	</script>
+		
+		
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
   </body>
 </html>
-

@@ -5,10 +5,11 @@ body{
 .theme{
 	background-color:#ffcf10;
 }
-.ccs{
-	text-align: center;
-	vertical-align: middle;
+.error{
+	margin-left: 7px;
+	color:red;
 }
+
 .layout{
 	margin-top: 9px;
 	display: block;
@@ -37,7 +38,7 @@ body{
 
 .routeInfo_below{
 	padding: 4px;
-	height: 250px;
+	height: 180px;
 }
 
 .departure{
@@ -58,21 +59,36 @@ body{
 	float: left;
 }
 
-.bookingButton{
-	margin-top: 10px;
-	display: block;
-	float: left;
+.sub_title{
+	margin: 10px 200px;
 }
 
-.seatLeft{
-	margin-left: 800px;
-	margin-top: 20px;
-	font-size: 18px;
-	display: block;
-	float: left;
+.form_bg{
+	padding: 30px;
 }
 
-.seatLeft h5{
+.CountNum{
+	position: absolute;
+	top: 240px;
+	left: 500px;
+}
+
+.CountNum h5{
 	display: block;
-	float: left;
+	position: relative;
+	bottom: 27px;
+	left: 110px;
+}
+
+.price{
+	position: absolute;
+	top: 240px;
+	left: 850px;
+}
+
+.price h5{
+	display: block;
+	position: relative;
+	bottom: 27px;
+	left: 40px;
 }

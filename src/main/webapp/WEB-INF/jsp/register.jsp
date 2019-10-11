@@ -33,20 +33,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Custom styles for this template -->
     <link href="css/register.css" rel="stylesheet">
 
-		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
   </head>
 
   <body onload="massage()">
+  	<center><h1>校园包车系统</h1></center>
 
     <div class="container">
 
       <form:form action="user/register" method="post" modelAttribute="user" class="form-signin">
-        <h2 class="form-signin-heading">快速注册</h2>
+        <h2 class="form-signin-heading">用户注册</h2>
         <label for="inputTel" class="sr-only">Telephone number</label>
         <input name="username" type="tel" id="inputTel" class="form-control" placeholder="手机号码" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>	

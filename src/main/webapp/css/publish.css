@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.theme{
+	background-color:#ffcf10;
+}
+.error{
+	margin-left: 7px;
+	color:red;
+}
+
+.layout{
+	margin-top: 9px;
+	display: block;
+	float: left;
+}
+
+.login-state{
+	color: #FFFFFF;
+	line-height: 50px;
+	margin-left: 40px;
+	display: block;
+	float: left;
+}
+
+.user{
+	color: #FFFFFF;
+	line-height: 50px;
+	margin-left: 10px;
+	display: block;
+	float: left;
+}
+
+.content{
+	margin-top: 90px;
+}
+
+.title{
+	margin-left: 30px;
+}
+
+.form_bg{
+	padding: 30px;
+}
+
+
+

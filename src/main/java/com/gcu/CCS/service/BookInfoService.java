@@ -8,4 +8,5 @@ public interface BookInfoService {
 	public String selectBookInfo(Model model,String act);
 	public String addBookInfo(BookInfo bookInfo);
 	public String selectBookInfoByUserId(Model model,Integer id);
+	public String toAddBookInfo(Model model,Integer travelInfoId);
 }

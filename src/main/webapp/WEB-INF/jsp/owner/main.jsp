@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" 
-           uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%
 String path = request.getContextPath();
@@ -21,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta name="author" content="">
 
 		<title>订票首页</title>
+		
 		<style type="text/css">
 		* {
 			margin: 0px;
@@ -30,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              width: 100%;
              height: 100%;
         }
-   		#content {
+		#content {
 		height: 100%;
 		width: 100%;
 		overflow:hidden;
@@ -41,45 +40,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			height: 100%;
 			width: 100%;
 		}
-        </style>
+		</style>
+		
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 		
 		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/bootstrap/bootstrap.min.js"></script>
 	</head>
-	<body>
-	<div class="container">
-			      <!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron">
-		<center>
-			<c:if test="${bookInfos.size() == 0 }">
-				您目前还没有订单。
-			</c:if> 
-			<c:if test="${bookInfos.size() != 0 }">
-				<table border="1" bordercolor="PaleGreen">
-					<tr>
-						<th width="50px">ID</th>
-						<th width="100px">姓名</th>
-						<th width="200px">联系方式</th>
-						<th width="50px">线路</th>
-					</tr>
-					<c:forEach items="${bookInfos }" var="bookInfo">
-						<tr onmousemove="changeColor(this)" onmouseout="changeColor1(this)">
-							<td>${bookInfo.id }</td>
-							<td>${bookInfo.name }</td>
-							<td>${bookInfo.tel }</td>
-							<td><a href="travelInfo/selectATravelInfo?id=${bookInfo.travelInfoId }" target="bookInfoDetails">详情</a></td>
-						</tr>
-					</c:forEach>
-				</table>
-			</c:if>
-		</center>
-		</div>
-	</div>
-	<div id="content">
-		<iframe  src=""  name="bookInfoDetails" frameborder="0"></iframe>
-	</div>
 
+	<body>
+		
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="dropdown layout">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    菜单
+	    <span class="caret"></span>
+	  </button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li>
+							<a href="owner/toMain">首页</a>
+						</li>
+						<li>
+							<a href="#" style="text-decoration: line-through;">个人中心</a>
+						</li>
+						<li>
+							<a href="travelInfo/selectTravelInfo" target="inCenter">车辆信息</a>
+						</li>
+						<li>
+							<a href="travelInfo/addTravelInfo" target="inCenter" style="text-decoration: line-through;">发布车程</a>
+						</li>
+						<li>
+							<a href="travelInfo/selectTravelInfoById?id=${sessionScope.owner.id }" target="inCenter">已发布的车程</a>
+						</li>
+					</ul>
+				</div>
+				<div class="login-state" >
+					<p>欢迎：<a href="owner/toLogin" id="ls">${sessionScope.owner.username }</a></p>
+				</div>
+
+			</div>
+		</nav>
+		<div id="content" class="theme">
+			<iframe  src=""  name="inCenter" frameborder="0"></iframe>
+		</div>
 	</body>
+
 </html>

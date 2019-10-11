@@ -19,8 +19,9 @@
 	
     <!-- 静态资源需要单独处理，不需要dispatcher servlet -->  
     <mvc:resources location="/css/" mapping="/css/**"></mvc:resources> 
-    <mvc:resources location="/images/" mapping="/images/**"></mvc:resources> 
+    <mvc:resources location="/imges/" mapping="/imges/**"></mvc:resources> 
     <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+    <mvc:resources location="/fonts/" mapping="/fonts/**"></mvc:resources>
     
 	<!-- 配置视图解析器 -->
 	<bean

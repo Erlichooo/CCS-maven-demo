@@ -1,7 +1,5 @@
 package com.gcu.CCS.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +8,7 @@ import org.springframework.ui.Model;
 import com.gcu.CCS.dao.BookInfoDao;
 import com.gcu.CCS.dao.TravelInfoDao;
 import com.gcu.CCS.pojos.BookInfo;
+import com.gcu.CCS.pojos.TravelInfo;
 import com.gcu.CCS.service.BookInfoService;
 
 @Service("bookInfoService")
@@ -27,7 +26,8 @@ public class BookInfoServiceImpl implements BookInfoService {
 	@Override
 	public String addBookInfo(BookInfo bookInfo) {
 		bookInfoDao.addBookInfo(bookInfo);
-		return "bookInfo/selectBookInfo";
+		//JSON forward
+		return "bookInfo/addBookInfo";
 	}
 	@Override
 	public String selectBookInfoByUserId(Model model, Integer id) {
@@ -36,6 +36,12 @@ public class BookInfoServiceImpl implements BookInfoService {
 			model.addAttribute("travelInfos", travelInfoDao.selectATravelInfo(b))*/
 			model.addAttribute("bookInfos",bookInfoDao.selectBookInfoByUserId(id));
 			return "bookInfo/selectBookInfo";
+	}
+	@Override
+	public String toAddBookInfo(Model model,Integer travelInfoId) {
+		TravelInfo travelInfo=travelInfoDao.selectATravelInfo(travelInfoId);
+		model.addAttribute(travelInfo);
+		return "bookInfo/addBookInfo";
 	}
 
 }

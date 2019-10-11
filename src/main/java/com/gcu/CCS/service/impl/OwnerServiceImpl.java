@@ -28,11 +28,35 @@ public class OwnerServiceImpl implements OwnerService {
 		}
 		if(towner != null) {//判断towner，若不为空，则将用户信息存到session中
 			session.setAttribute("owner", towner);
-			return "succ";
+			return "owner/main";
 		}else {//否则将登陆失败信息存到model中
 			model.addAttribute("msg", "您还没有登录");
 			return "e";
 		}
+	}
+	@Override
+	public String addOwner(Owner owner, Model model, HttpSession session) {
+		if(ownerDao.matchOwner(owner).size() == 0) {//如果表中不存在该用户，则注册
+			ownerDao.register(owner);
+			session.setAttribute("msg", "注册成功");
+			return "owner/login";
+		}
+		else {
+			session.setAttribute("msg", "该用户名已存在");
+			return "owner/register";
+		}
+	}
+	@Override
+	public String toLogin() {
+		return "owner/login";
+	}
+	@Override
+	public String toRegister() {
+		return "owner/register";
+	}
+	@Override
+	public String toMain() {
+		return "owner/main";
 	}
 
 }

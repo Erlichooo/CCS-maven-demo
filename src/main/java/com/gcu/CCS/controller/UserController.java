@@ -32,4 +32,8 @@ public class UserController {
 	public String toLogin() {
 		return userService.toLogin();
 	}
+	@RequestMapping("/toMain")
+	public String toMain() {
+		return userService.toMain();
+	}
 }

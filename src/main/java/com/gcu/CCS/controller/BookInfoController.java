@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gcu.CCS.pojos.BookInfo;
 import com.gcu.CCS.service.BookInfoService;
@@ -22,7 +23,13 @@ public class BookInfoController {
 	}
 	
 	@RequestMapping("/addBookInfo")
+	@ResponseBody
 	public String addBookInfo(@ModelAttribute BookInfo bookInfo) {
 		return bookInfoService.addBookInfo(bookInfo);
+	}
+	
+	@RequestMapping("/toAddBookInfo")
+	public String toAddBookInfo(Model model,Integer travelInfoId) {
+		return bookInfoService.toAddBookInfo(model,travelInfoId);
 	}
 }

@@ -16,6 +16,10 @@ public class TravelInfoController {
 	public String selectTravelInfo(Model model,String act) {
 		return travelInfoService.selectTravelInfo(model, act);
 	}
+	@RequestMapping("/selectTravelInfoById")
+	public String selectBookInfo(Model model,Integer id) {
+		return travelInfoService.selectTravelInfoByOwnerId(model, id);
+	}
 	@RequestMapping("/selectATravelInfo")
 	public String selectATravelInfo(Model model,Integer id) {
 		return travelInfoService.selectATravelInfo(model, id);
