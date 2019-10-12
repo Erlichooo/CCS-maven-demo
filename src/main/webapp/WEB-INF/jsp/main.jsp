@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		height: 100%;
 		width: 100%;
 		overflow:hidden;
-		padding: 10px;
+		padding: 0px;
 		}
 		
 		#content iframe {
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  </button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 						<li>
-							<a href="user/toMain">首页</a>
+							<a href="user/toHomepage" target="inCenter">首页</a>
 						</li>
 						<li>
 							<a href="#" style="text-decoration: line-through;">个人中心</a>
@@ -89,8 +89,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</nav>
 		
-		<div id="content" class="theme">
-			<iframe  src=""  name="inCenter" frameborder="0"></iframe>
+		<div id="content">
+			<iframe  src="user/toHomepage" seamless="seamless" name="inCenter" frameborder="0"></iframe>
 		</div>
 		<script>
 			/* var login = $(".login-state").text().trim() */

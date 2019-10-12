@@ -28,12 +28,17 @@ public class TravelInfoServiceImpl implements TravelInfoService {
 	@Override
 	public String addTravelInfo(TravelInfo travelInfo) {//暂时没用上，需要修改
 		travelInfoDao.addTravelInfo(travelInfo);
+		//JSON forward
 		return "travelInfo/addTravelInfo";
 	}
 	@Override
 	public String selectTravelInfoByOwnerId(Model model, Integer id) {
 		model.addAttribute("travelInfos",travelInfoDao.selectTravelInfoByOwnerId(id));//如果出问题先看这travelInfos，与查全一样
 		return "travelInfo/selectTravelInfo";
+	}
+	@Override
+	public String toAddTravelInfo() {
+		return "travelInfo/addTravelInfo";
 	}
 
 }

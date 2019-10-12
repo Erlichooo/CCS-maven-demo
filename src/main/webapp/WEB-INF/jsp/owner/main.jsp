@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		height: 100%;
 		width: 100%;
 		overflow:hidden;
-		padding: 10px;
+		padding: 0px;
 		}
 		
 		#content iframe {
@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<a href="travelInfo/selectTravelInfo" target="inCenter">车辆信息</a>
 						</li>
 						<li>
-							<a href="travelInfo/addTravelInfo" target="inCenter" style="text-decoration: line-through;">发布车程</a>
+							<a href="travelInfo/toAddTravelInfo" target="inCenter">发布车程</a>
 						</li>
 						<li>
 							<a href="travelInfo/selectTravelInfoById?id=${sessionScope.owner.id }" target="inCenter">已发布的车程</a>
@@ -84,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</nav>
 		<div id="content" class="theme">
-			<iframe  src=""  name="inCenter" frameborder="0"></iframe>
+			<iframe  src="user/toHomepage" seamless="seamless" name="inCenter" frameborder="0"></iframe>
 		</div>
 	</body>
 

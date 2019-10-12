@@ -11,4 +11,5 @@ public interface UserService {
 	public String toLogin();
 	public String toRegister();
 	public String toMain();
+	public String toHomepage();
 }

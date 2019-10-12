@@ -9,4 +9,5 @@ public interface TravelInfoService {
 	public String selectATravelInfo(Model model, Integer id);
 	public String selectTravelInfoByOwnerId(Model model,Integer id);
 	public String addTravelInfo(TravelInfo travelInfo);
+	public String toAddTravelInfo();
 }

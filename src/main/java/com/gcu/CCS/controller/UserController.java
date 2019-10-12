@@ -36,4 +36,8 @@ public class UserController {
 	public String toMain() {
 		return userService.toMain();
 	}
+	@RequestMapping("toHomepage")
+	public String toHomepage() {//返回主页,用户和商家通用
+		return userService.toHomepage();
+	}
 }
