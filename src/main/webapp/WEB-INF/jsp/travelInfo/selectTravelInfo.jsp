@@ -76,8 +76,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</c:forEach>
 		</table>
 	</c:if>
-	<script type="text/javascript">
-	$("#bt1").attr("disabled",ture);
-	</script>
+
 	</body>
 </html>

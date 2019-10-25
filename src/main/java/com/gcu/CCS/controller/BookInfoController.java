@@ -24,7 +24,7 @@ public class BookInfoController {
 	
 	@RequestMapping("/addBookInfo")
 	@ResponseBody
-	public String addBookInfo(@ModelAttribute BookInfo bookInfo) {
+	public String addBookInfo(@ModelAttribute("bookInfo") BookInfo bookInfo) {
 		return bookInfoService.addBookInfo(bookInfo);
 	}
 	

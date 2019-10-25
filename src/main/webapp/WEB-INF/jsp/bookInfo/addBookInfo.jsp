@@ -74,10 +74,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	<div class="container">
 		<div class="form_bg jumbotron">
-			<form:form id="bookingForm" method="post" modelAttribute="bookInfo" onsubmit="submitJson('bookingForm','bookInfo/addBookInfo', '订票成功！')">
+			<form:form id="bookingForm" method="post" modelAttribute="bookInfo">
 				<div class="form-group">
 					<label for="name">乘车人姓名</label>
-					<input type="text" class="form-control" id="name" name="name" placeholder="请输入真实姓名">
+					<form:input path="name" type="text" class="form-control" id="name" name="name" placeholder="请输入真实姓名"/>
 				</div>
 <!-- 				<div class="form-group">
 					<label for="exampleInputIdCard">乘车人身份证号码</label>
@@ -85,12 +85,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div> -->
 				<div class="form-group">
 					<label for="tel">乘车人联系方式</label>
-					<input type="text" class="form-control" id="tel" name="tel" placeholder="请输入11位有效电话号码">
+					<form:input path="tel" type="text" class="form-control" id="tel" name="tel" placeholder="请输入11位有效电话号码"/>
 				</div>
-				<input type="hidden" name="userId" value="${sessionScope.user.id }">
-				<input type="hidden" name="travelInfoId" value="${travelInfo.id }">
+				<input type="hidden" name="userId" value=${sessionScope.user.id }>
+				<input type="hidden" name="travelInfoId" value=${travelInfo.id }>
 				
-				<button type="submit" class="btn btn-default" >提交订单</button>
+				<button class="btn btn-default" onclick="submitJson('bookingForm',${sessionScope.user.id },'bookInfo/addBookInfo', '订票成功！')">提交订单</button>
 			</form:form>
 		</div>
 	</div>

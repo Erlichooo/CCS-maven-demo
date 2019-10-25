@@ -27,7 +27,7 @@ public class BookInfoServiceImpl implements BookInfoService {
 	public String addBookInfo(BookInfo bookInfo) {
 		bookInfoDao.addBookInfo(bookInfo);
 		//JSON forward
-		return "bookInfo/addBookInfo";
+		return "bookInfo/selectBookInfo";
 	}
 	@Override
 	public String selectBookInfoByUserId(Model model, Integer id) {
@@ -41,6 +41,7 @@ public class BookInfoServiceImpl implements BookInfoService {
 	public String toAddBookInfo(Model model,Integer travelInfoId) {
 		TravelInfo travelInfo=travelInfoDao.selectATravelInfo(travelInfoId);
 		model.addAttribute(travelInfo);
+		model.addAttribute("bookInfo", new BookInfo()); //前台要用modelAttribute添加时必须先 new 一个该类
 		return "bookInfo/addBookInfo";
 	}
 

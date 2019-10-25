@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<h3>班车信息发布</h3>
 			</div>
 			<div class="form_bg">
-				<form:form id="publishForm" modelAttribute="travelInfo" onsubmit="submitJson('publishForm','travelInfo/addTravelInfo', '发布成功！')">
+				<form:form id="publishForm" method="post" modelAttribute="travelInfo">
 					<div class=" jumbotron">
 						<div class="form-group">
 							<label for="startProvince">出发城市</label>
@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<input type="hidden" name="ownerId" value="${sessionScope.owner.id }">
 				
-					<button type="submit" class="btn btn-default">发布信息</button>
+					<button class="btn btn-default" type="submit" onclick="submitJson('publishForm','travelInfo/addTravelInfo', '发布成功！')">发布信息</button>
 				</form:form>
 			</div>
 		</div>
